@@ -1,0 +1,1155 @@
+/* Global Rules */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    nav .toggle-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul{
+        display: none;
+    }
+    nav .toggle-menu:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(0 0 0 / 50%);;
+        padding: 0;
+    }
+    nav .toggle-menu:hover + ul li a {
+        padding: 15px;
+    }
+}
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* Start Variables */
+
+:root {
+    --main-color: #19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 100px 0;
+}
+
+/* Template Components */
+
+.special-heading {
+    text-align: center;
+}
+
+.special-heading h3 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+}
+
+.special-heading h3::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+}
+
+.special-heading h3::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: white;
+}
+
+.special-heading p {
+    width: 550px;
+    max-width: 100%;
+    /* so in mobile version the text won't pop out */
+    margin: 0 auto 100px;
+    line-height: 2;
+    color: #777;
+}
+
+/* Header */
+
+header {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+
+header .container::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    bottom: 0;
+    background-color: white;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+.form {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.form i {
+    color: white;
+}
+
+header .container nav {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    /* Why z-index Fixes It (hover bottom border show above it)
+    When you set z-index: 2 on the nav (or the a element), it forces the navigation links to appear above the ::after line.
+    This allows the hover border to be visible because it is no longer obscured by the white line. */
+}
+
+
+nav ul {
+    display: flex;
+    margin: 0;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 14px;
+    transition: .3s;
+    padding: 40px 10px;
+    transition: .3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+
+nav .toggle-menu {
+    color: white;
+    font-size: 1.6rem;
+}
+
+/* Landing */
+
+.Landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url(../Images/landing.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.Landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+
+.Landing .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    width: 50%;
+    padding: 40px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Landing .text .content {
+    max-width: 500px;
+}
+
+.Landing .text .content h2 {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.Landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.Landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+}
+
+.Landing .fa-angle-left {
+    left: 2rem;
+}
+
+.Landing .fa-angle-right {
+    right: 2rem;
+}
+
+.bullets {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    padding: 0;
+}
+
+.bullets li {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: .7rem;
+}
+
+.bullets .active {
+    background-color: var(--main-color);
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .Landing .text {
+        width: 100%;
+    }
+    .Landing .text .content {
+        max-width: none;
+    }
+    .Landing .change-background {
+        display: none;
+    }
+}
+/* Services */
+
+.Services {
+    padding: var(--section-padding);
+}
+
+.Services .container .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+}
+
+.Services .srv-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Services .srv-card h3 {
+    margin-top: 0;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.Services .srv-card .srv-text{
+    max-width: 80%;
+}
+
+.Services .srv-card .srv-text p {
+    line-height: 2;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .Services .container .services-content {
+        display: block;
+        /* because grid has minmax which will likely make page pop out */
+    }
+    .Services .srv-card {
+        flex-direction: column;
+        text-align: center;
+        row-gap: 2rem;
+    }
+    .Services .srv-card .srv-text {
+        max-width: 100%;
+    }
+}
+/* Design Section */
+
+.Design {
+    padding: var(--section-padding);
+    height: 600px;
+    position: relative;
+    background-image: url(../Images/design-features.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Design::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+
+.Design * {
+    position: relative;
+    z-index: 2;
+}
+
+.Design .text {
+    /* min-width: 50%; */
+    background-color: var(--transparent-color);
+    flex: 1;
+    /* it will do the same as min-width: 50% (making flex grow 1 both of them will take the same space)*/
+    color: white;
+    padding: 50px;
+}
+
+.Design .text h2 {
+    font-weight: normal;
+    margin-bottom: 2.6rem;
+    text-transform: uppercase;
+    margin-top: 0;
+
+}
+
+.Design .image {
+    text-align: center;
+    flex: 1;
+}
+
+.Design .image img {
+    bottom: -150px;
+}
+
+.Design .text ul li {
+    padding: 1rem 0;
+}
+
+.Design .text ul li::before {
+    content: "\f108";
+    /* unicode of the icon */
+    margin-right: 1rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* some icons won't show unless you set font-weight for them */
+    position: relative;
+    top: 1px;
+}
+
+@media (max-width: 768px) {
+    .Design .image {
+        display: none;
+    }
+}
+
+/* <!-- Portfolio Section --> */
+
+.Portfolio {
+    padding: var(--section-padding);
+}
+
+.Portfolio .container .shuffle {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.Portfolio .container .shuffle li {
+    padding: 10px;
+}
+
+.Portfolio .container .shuffle .active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.Portfolio .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+
+@media (min-width: 768px) {
+    .Portfolio .img-container .box  {
+    flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .Portfolio .img-container .box  {
+    flex-basis: 25%;
+    }
+}
+
+.Portfolio .img-container .box img {
+    max-width: 100%;
+    transition: .3s;
+}
+
+.Portfolio .img-container .box {
+    overflow: hidden;
+    position: relative;
+}
+
+.Portfolio .img-container .box .caption {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    transition: .3s;
+}
+
+.Portfolio .img-container .box .caption h4 {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.Portfolio .img-container .box .caption p {
+    margin: 0;
+}
+
+
+.Portfolio .img-container .box:hover .caption {
+    bottom: 0;
+}
+
+.Portfolio .img-container .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+.show {
+    padding: 15px 20px;
+    background-color: var(--main-color);
+    color: white;
+    margin: 3rem auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    width: fit-content;
+}
+
+/* Video Section */
+
+.video {
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+
+.video video {
+    width: 100%;
+}
+
+.video .text {
+    background-color: var(--transparent-color);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+.video .text h2 {
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.video .text p {
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.video .text button {
+    padding: 10px 20px;
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+    border: none;
+    /* button has default border */
+}
+
+/* <!-- About Section --> */
+
+.about {
+    padding: var(--section-padding);
+    padding-bottom: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about img {
+    max-width: 100%;
+    position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    /* so space between img and special-heading won't increase althought that we moved it to bottom the same space */
+}
+
+@media (max-width: 768px) {
+    .about img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+
+/* Statistics Section */
+
+.stats {
+    padding: var(--section-padding);
+    background-image: url(/Images/stats.png);
+    text-align: center;
+    position: relative;
+}
+
+.stats::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.stats .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    /* Positioned elements (in HTML order) have the precedence in stacks order */
+}
+
+.stats .container .box {
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: white;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .stats .container .box {
+        flex-basis: 100%;
+    }
+    .stats .container .box::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        height: 2px;
+    }
+}
+
+@media (min-width: 768px) {
+    .stats .container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 991px) {
+    .stats .container .box {
+        flex-basis: 25%;
+    }
+}
+
+.stats .container .box i {
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats .container .box .number {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 1.3rem;
+}
+
+.stats .container .box p {
+    font-size: 14px;
+}
+
+/* <!-- Skills Section --> */
+
+.our-skills {
+    padding: var(--section-padding);
+}
+
+.our-skills .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    text-align: center;
+    grid-column-gap: 100px;
+}
+
+.our-skills .container > div h3 {
+    font-weight: normal;
+    margin: 0 auto 30px;
+    text-transform: uppercase;
+}
+
+.our-skills .container > div p {
+    color: #777;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+.our-skills .container .Testimonials {
+    position: relative;
+}
+
+.our-skills .container .Testimonials > div {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.our-skills .container .Testimonials .content img {
+    width: 100px;
+    height: 100px;
+    margin-right: 50px;
+    border-radius: 50%;
+}
+
+.our-skills .container .Testimonials .content .text {
+    line-height: 1.8;
+    border-bottom: 1px solid #ccc;
+    text-align: start;
+}
+
+.our-skills .container .Testimonials .content .text p {
+    color: #777;
+    font-size: 14px;
+    text-align: end;
+    margin-bottom: 10px;
+}
+
+.our-skills .container .Testimonials .bullets {
+    position: static;
+    margin: 50px 0;
+    justify-content: center;
+    transform: none;
+}
+
+.our-skills .container .Testimonials .bullets li {
+    border-color: #aaa;
+    width: 1rem;
+    height: 1rem;
+}
+
+.our-skills .container .skills .prog-holder {
+    margin-bottom: 40px;
+}
+
+.our-skills .container .skills .prog-holder h4 {
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: start;
+    margin: 0 0 10px;
+}
+
+.our-skills .container .skills .prog-holder .prog {
+    width: 100%;
+    height: 30px;
+    background-color: #dedadc;
+}
+
+.our-skills .container .skills .prog-holder .prog span {
+    background-color: var(--main-color);
+    display: block;
+    /* because inline elements are unchangable in height and width (fit *) */
+    height: 100%;
+    position: relative;
+}
+
+.our-skills .container .skills .prog-holder .prog span::before {
+    content: attr(data-progress);
+    position: absolute;
+    right: 1px;
+    top: -2.4rem;
+    transform: translateX(50%);
+    background-color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+
+}
+
+.our-skills .container .skills .prog-holder .prog span::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 7px;
+    top: -12px;
+    right: 0;
+    transform: translateX(50%);
+    border-color: black transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .our-skills .container .Testimonials .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .our-skills .container .Testimonials .content img {
+        margin: 0 auto 10px;
+    }
+    .our-skills .container .Testimonials .content .text {
+        text-align: center;
+    }
+}
+
+/* Quote */
+
+.quote {
+    padding: var(--section-padding);
+    background-image: url(/Images/quote.jpg);
+    text-align: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 75%);
+}
+
+.quote .container {
+    position: relative;
+    /* so the container take the normal stack order */
+}
+
+.quote q {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.quote q::after, 
+.quote q::before {
+    content: "\f10e";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+}
+
+/* Pricing Section */
+
+.pricing {
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.pricing .container .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    
+}
+
+.pricing .container .plans .plan {
+    background-color: #fcfcfc;
+}
+
+.pricing .container .plans .plan .head {
+    padding: 40px 20px;
+    border: 1px solid var(--main-color);
+    border-color: var(--main-color) transparent;
+}
+
+.pricing .container .plans .plan .head h3 {
+    margin: 0 0 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.pricing .container .plans .plan .head span {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.pricing .container .plans .plan .head span::before {
+    content: "$";
+    position: relative;
+    font-size: 25px;
+    top: -41px;
+}
+
+.pricing .container .plans .plan .head span::after {
+    content: "/Mo";
+    position: relative;
+    font-size: 20px;
+    right: -15px;
+}
+
+.pricing .container .plans .plan ul {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .container .plans .plan ul li {
+    padding: 20px;
+    position: relative;
+}
+
+.pricing .container .plans .plan ul li:not(:last-child)::after  {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 9rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+}
+
+.pricing .container .plans .plan .foot a {
+    margin: 30px auto;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    display: block;
+    border: 1px solid var(--main-color);
+    width: fit-content;
+}
+
+.contact-text {
+    font-size: 20px;
+    margin: 50px 0 20px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    padding: 15px 30px;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+}
+
+/* <!-- Subscribe Section --> */
+
+.sub {
+    padding: var(--section-padding);
+    background-image: url(/Images/subscribe.jpg);
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.sub::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.sub .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .sub .container {
+        flex-direction: column;
+    }
+    .sub p {
+        margin: 30px auto;
+    }
+}
+
+.sub .container form {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+}
+
+.sub .container form i {
+    position: absolute;
+    left: 25px;
+}
+
+.sub .container form input[type="email"] {
+    position: relative;
+    background: none;
+    border: 1px solid white;
+    border-right: none;
+    caret-color: var(--main-color);
+    border-right: none;
+    padding: 20px;
+    padding-left: 60px;
+    width: calc(100% - 130px);
+    color: white;
+}
+
+.sub .container form input[type="email"]:focus, 
+.sub .container form input[type="submit"]:focus {
+    outline: none;
+}
+
+.sub .container form input[type="email"]::-webkit-input-placeholder,
+.sub .container form input[type="email"]::placeholder {
+    color: white;
+}
+
+.sub .container form input[type="submit"] {
+    width: 130px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    align-self: stretch;
+    text-transform: uppercase;
+    border: 1px solid white;
+    border-left: none;
+}
+
+.sub p {
+    margin-left: 50px;
+    line-height: 2;
+}
+
+/* <!-- Contact Section --> */
+
+.contact {
+    padding: var(--section-padding);
+}
+
+.contact .contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .contact-content form {
+    flex-basis: 70%;
+}
+
+.contact .contact-content form input:not(input[type="submit"]),
+textarea {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    caret-color: var(--main-color);
+}
+
+.contact .contact-content form input:focus,
+textarea:focus {
+    outline: none;
+}
+
+textarea {
+    height: 200px;
+}
+
+.contact .contact-content form input[type="submit"] {
+    padding: 20px;
+    margin-left: auto;
+    /* it won't work on inline-block element becasue it just works on block elements (auto left and right margin) */
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+
+}
+
+.contact .contact-content .info {
+    flex-basis: 25%;
+}
+
+.contact .contact-content .info h5 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 0 30px;
+}
+
+.contact .contact-content .info p {
+    margin: 0 0 90px;
+}
+
+.contact .contact-content .info p,
+.contact .contact-content .info address {
+    color: #777;
+    line-height: 2;
+}
+
+@media (max-width: 767px) {
+    .contact .contact-content {
+        flex-direction: column;
+        
+    }
+    .contact .contact-content .info {
+        order: -1;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* Footer */
+
+footer {
+    padding: 50px 0;
+    background-image: url(../Images/subscribe.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+footer .container {
+    position: relative;
+}
+
+footer img {
+    margin: 0 auto 20px;
+}
+
+footer p:not(.copyright) {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 20px auto;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    width: fit-content;
+}
+
+footer .social-icons i {
+    padding: 15px 20px;
+}
+
+.copyright {
+    margin-top: 60px;
+}
+
+.copyright span {
+    color: var(--main-color);
+}
