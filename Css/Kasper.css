@@ -597,7 +597,7 @@ nav .toggle-menu {
 
 .stats {
     padding: var(--section-padding);
-    background-image: url(/Images/stats.png);
+    background-image: url(../Images/stats.png);
     text-align: center;
     position: relative;
 }
@@ -809,7 +809,7 @@ nav .toggle-menu {
 
 .quote {
     padding: var(--section-padding);
-    background-image: url(/Images/quote.jpg);
+    background-image: url(../Images/quote.jpg);
     text-align: center;
     background-size: cover;
     position: relative;
@@ -942,7 +942,7 @@ nav .toggle-menu {
 
 .sub {
     padding: var(--section-padding);
-    background-image: url(/Images/subscribe.jpg);
+    background-image: url(../Images/subscribe.jpg);
     background-size: cover;
     color: white;
     position: relative;
