@@ -45,17 +45,17 @@ ul {
 }
 
 @media (max-width: 768px) {
-    header nav ul{
+    header nav ul {
         display: none;
     }
-    nav .toggle-menu:hover + ul {
+    nav .open + ul {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgb(0 0 0 / 50%);;
+        background-color: rgb(0 0 0 / 50%);
         padding: 0;
     }
     nav .toggle-menu:hover + ul li a {
@@ -180,21 +180,19 @@ header .container nav {
     This allows the hover border to be visible because it is no longer obscured by the white line. */
 }
 
-
 nav ul {
     display: flex;
     margin: 0;
 }
-
 
 nav ul li a {
     text-decoration: none;
     color: white;
     display: block;
     font-size: 14px;
-    transition: .3s;
+    transition: 0.3s;
     padding: 40px 10px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 nav ul li a:hover,
@@ -202,7 +200,6 @@ nav ul li a.active {
     color: var(--main-color);
     border-bottom: 1px solid var(--main-color);
 }
-
 
 nav .toggle-menu {
     color: white;
@@ -286,7 +283,7 @@ nav .toggle-menu {
     height: 1.3rem;
     border-radius: 50%;
     border: 1px solid white;
-    margin-right: .7rem;
+    margin-right: 0.7rem;
 }
 
 .bullets .active {
@@ -329,7 +326,7 @@ nav .toggle-menu {
     margin-bottom: 2rem;
 }
 
-.Services .srv-card .srv-text{
+.Services .srv-card .srv-text {
     max-width: 80%;
 }
 
@@ -394,7 +391,6 @@ nav .toggle-menu {
     margin-bottom: 2.6rem;
     text-transform: uppercase;
     margin-top: 0;
-
 }
 
 .Design .image {
@@ -441,6 +437,7 @@ nav .toggle-menu {
 
 .Portfolio .container .shuffle li {
     padding: 10px;
+    cursor: pointer;
 }
 
 .Portfolio .container .shuffle .active {
@@ -454,22 +451,23 @@ nav .toggle-menu {
     margin-top: 5rem;
 }
 
-
 @media (min-width: 768px) {
-    .Portfolio .img-container .box  {
-    flex-basis: 50%;
+    .Portfolio .img-container .box {
+        flex-basis: 50%;
     }
 }
 
 @media (min-width: 1199px) {
-    .Portfolio .img-container .box  {
-    flex-basis: 25%;
+    .Portfolio .img-container .box {
+        flex-basis: 25%;
     }
 }
 
 .Portfolio .img-container .box img {
     max-width: 100%;
-    transition: .3s;
+    transition: 0.3s;
+    width: 295.75px;
+    height: 197.156px;
 }
 
 .Portfolio .img-container .box {
@@ -484,7 +482,7 @@ nav .toggle-menu {
     width: 100%;
     padding: 20px;
     background-color: white;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .Portfolio .img-container .box .caption h4 {
@@ -495,7 +493,6 @@ nav .toggle-menu {
 .Portfolio .img-container .box .caption p {
     margin: 0;
 }
-
 
 .Portfolio .img-container .box:hover .caption {
     bottom: 0;
@@ -515,6 +512,7 @@ nav .toggle-menu {
     text-transform: uppercase;
     display: block;
     width: fit-content;
+    cursor: pointer;
 }
 
 /* Video Section */
@@ -566,6 +564,7 @@ nav .toggle-menu {
     background-color: black;
     text-transform: uppercase;
     border: none;
+    cursor: pointer;
     /* button has default border */
 }
 
@@ -778,7 +777,6 @@ nav .toggle-menu {
     color: white;
     padding: 4px;
     border-radius: 4px;
-
 }
 
 .our-skills .container .skills .prog-holder .prog span::after {
@@ -793,7 +791,7 @@ nav .toggle-menu {
 }
 
 @media (max-width: 768px) {
-    .our-skills .container .Testimonials .content{
+    .our-skills .container .Testimonials .content {
         flex-direction: column;
         align-items: center;
     }
@@ -837,7 +835,7 @@ nav .toggle-menu {
     margin-bottom: 20px;
 }
 
-.quote q::after, 
+.quote q::after,
 .quote q::before {
     content: "\f10e";
     font-weight: 900;
@@ -855,7 +853,6 @@ nav .toggle-menu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
-    
 }
 
 .pricing .container .plans .plan {
@@ -902,7 +899,7 @@ nav .toggle-menu {
     position: relative;
 }
 
-.pricing .container .plans .plan ul li:not(:last-child)::after  {
+.pricing .container .plans .plan ul li:not(:last-child)::after {
     content: "";
     position: absolute;
     height: 1px;
@@ -999,7 +996,7 @@ nav .toggle-menu {
     color: white;
 }
 
-.sub .container form input[type="email"]:focus, 
+.sub .container form input[type="email"]:focus,
 .sub .container form input[type="submit"]:focus {
     outline: none;
 }
@@ -1068,7 +1065,6 @@ textarea {
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-
 }
 
 .contact .contact-content .info {
@@ -1095,7 +1091,6 @@ textarea {
 @media (max-width: 767px) {
     .contact .contact-content {
         flex-direction: column;
-        
     }
     .contact .contact-content .info {
         order: -1;
@@ -1143,7 +1138,13 @@ footer p:not(.copyright) {
 }
 
 footer .social-icons i {
-    padding: 15px 20px;
+    margin: 15px 20px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+footer .social-icons i:hover {
+    color: #19c8fa;
 }
 
 .copyright {

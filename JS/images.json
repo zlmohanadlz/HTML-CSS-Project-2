@@ -1,0 +1,10 @@
+[
+    { "src": "Images/Add/photo.jpg", "alt": "Image", "category": "photo" },
+    { "src": "Images/Add/print.jpg", "alt": "Image", "category": "print" },
+    { "src": "Images/Add/print1.jpg", "alt": "Image", "category": "print" },
+    { "src": "Images/Add/print2.jpg", "alt": "Image", "category": "print" },
+    { "src": "Images/Add/print3.jpg", "alt": "Image", "category": "print" },
+    { "src": "Images/Add/web1.jpg", "alt": "Image", "category": "web" },
+    { "src": "Images/Add/web2.jpg", "alt": "Image", "category": "web" },
+    { "src": "Images/Add/web3.jpg", "alt": "Image", "category": "web" }
+]
