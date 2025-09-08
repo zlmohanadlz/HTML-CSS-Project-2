@@ -42,7 +42,7 @@ The project is part of my journey to practice **front-end web development** and 
 
 ### 🏠 Hero Section
 
-![Hero Section](<Screenshots/HeroSection.png)
+![Hero Section](Screenshots/HeroSection.png)
 
 ### 💼 Services Section
 
