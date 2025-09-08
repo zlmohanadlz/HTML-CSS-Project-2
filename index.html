@@ -101,16 +101,24 @@
                     </div>
                 </div>
             </div>
-            <i class="fas fa-angle-left change-background-left fa-2x"></i>
-            <i class="fas fa-angle-right change-background-right fa-2x"></i>
+            <i
+                class="fas fa-angle-left change-background-left fa-2x"
+                aria-label="Previous Slide"
+                role="button"
+            ></i>
+            <i
+                class="fas fa-angle-right change-background-right fa-2x"
+                aria-label="Next Slide"
+                role="button"
+            ></i>
         </div>
         <ul class="bullets">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
+            <li class="active" aria-label="Go To Slide 1" role="button"></li>
+            <li aria-label="Go To Slide 2" role="button"></li>
+            <li aria-label="Go To Slide 3" role="button"></li>
         </ul>
         <!-- Service Section -->
-        <div class="Services" id="Services">
+        <div class="Services" id="Services" aria-label="Services We Provide">
             <div class="container">
                 <div class="special-heading">
                     <h3>Services</h3>
@@ -295,7 +303,11 @@
         <!-- Video Section -->
         <div class="video">
             <video autoplay loop muted>
-                <source src="video/awesome-video.mp4" type="video/mp4" />
+                <source
+                    src="video/awesome-video.mp4"
+                    type="video/mp4"
+                    aria-label="A Bird Video"
+                />
                 this is A video Of a Bird
             </video>
             <div class="text">
@@ -305,7 +317,7 @@
             </div>
         </div>
         <!-- About Section -->
-        <div class="about" id="about">
+        <div class="about" id="about" aria-label="Information About Us">
             <div class="container">
                 <div class="special-heading">
                     <h3>About us</h3>
@@ -430,9 +442,13 @@
                         </div>
                     </div>
                     <ul class="bullets-profiles">
-                        <li></li>
-                        <li class="active"></li>
-                        <li></li>
+                        <li aria-label="Go To Slide 1" role="button"></li>
+                        <li
+                            class="active"
+                            aria-label="Go To Slide 2"
+                            role="button"
+                        ></li>
+                        <li aria-label="Go To Slide 3" role="button"></li>
                     </ul>
                 </div>
                 <div class="skills">
@@ -565,6 +581,7 @@
                         type="email"
                         class="Email"
                         placeholder="Your Email"
+                        aria-label="Enter Your Email To Subscripe"
                     />
                     <input type="submit" value="Subscribe" />
                 </form>
@@ -575,7 +592,7 @@
             </div>
         </div>
         <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <section class="contact" id="contact" aria-label="Contact Us">
             <div class="container">
                 <div class="special-heading">
                     <h3>Contact Us</h3>
@@ -589,19 +606,25 @@
                         <input
                             type="text"
                             name="Name"
-                            id=""
+                            aria-label="Enter Your Name"
                             placeholder="Your Name"
                         />
                         <input
                             type="email"
                             name="Email"
+                            aria-label="Enter Your Email address"
                             placeholder="Your Email"
                         />
                         <textarea
                             name="Message"
                             placeholder="Your Message"
+                            aria-label="Enter Your Message"
                         ></textarea>
-                        <input type="submit" value="Send Message" />
+                        <input
+                            type="submit"
+                            value="Send Message"
+                            aria-label="Submit Your Message"
+                        />
                     </form>
                     <div class="info">
                         <h5>Get In Touch</h5>
@@ -626,10 +649,19 @@
                 <img src="Images/logo.webp" alt="logo" />
                 <p>We Are Social</p>
                 <div class="social-icons">
-                    <i class="fab fa-facebook-f" aria-label="Facebokk"></i>
-                    <i class="fab fa-twitter" aria-label="Twitter"></i>
+                    <i
+                        class="fab fa-facebook-f"
+                        aria-label="Visit Our Facebook Page"
+                    ></i>
+                    <i
+                        class="fab fa-twitter"
+                        aria-label="Visit Our Twitter Profile"
+                    ></i>
                     <i class="fas fa-home" aria-label="Home"></i>
-                    <i class="fab fa-linkedin" aria-label="Linkedin"></i>
+                    <i
+                        class="fab fa-linkedin"
+                        aria-label="Visit Our Linkedin Profile"
+                    ></i>
                 </div>
                 <p class="copyright">
                     &COPY; 2021 <span> Kasper</span> All Right Reserved
