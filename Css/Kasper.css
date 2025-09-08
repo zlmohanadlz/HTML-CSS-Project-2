@@ -17,6 +17,17 @@ body {
     background-color: white;
 }
 
+.scroller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #0075ff;
+    width: 20px;
+    height: 0.3rem;
+    transition: all 0.05s linear;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -211,9 +222,25 @@ nav .toggle-menu {
 .Landing {
     min-height: 100vh;
     background-color: #1f2021;
-    background-image: url(../Images/landing.jpg);
     background-size: cover;
     position: relative;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.Landing.one {
+    background-image: url(../Images/landing.webp);
+}
+
+.Landing.two {
+    background-image: url(../Images/LandScape2.webp);
+}
+
+.Landing.three {
+    background-image: url(../Images/LandScape3.webp);
 }
 
 .Landing .overlay {
@@ -254,22 +281,29 @@ nav .toggle-menu {
     line-height: 2;
 }
 
-.Landing .change-background {
+.contain {
+    position: relative;
+}
+
+.change-background-left,
+.change-background-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: #ddd;
+    cursor: pointer;
 }
 
-.Landing .fa-angle-left {
+.fa-angle-left {
     left: 2rem;
 }
 
-.Landing .fa-angle-right {
+.fa-angle-right {
     right: 2rem;
 }
 
-.bullets {
+.bullets,
+.bullets-profiles {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
@@ -278,7 +312,8 @@ nav .toggle-menu {
     padding: 0;
 }
 
-.bullets li {
+.bullets li,
+.bullets-profiles li {
     width: 1.3rem;
     height: 1.3rem;
     border-radius: 50%;
@@ -286,7 +321,8 @@ nav .toggle-menu {
     margin-right: 0.7rem;
 }
 
-.bullets .active {
+.bullets .active,
+.bullets-profiles .active {
     background-color: var(--main-color);
     border: none;
 }
@@ -298,7 +334,7 @@ nav .toggle-menu {
     .Landing .text .content {
         max-width: none;
     }
-    .Landing .change-background {
+    .contain .change-background {
         display: none;
     }
 }
@@ -355,7 +391,7 @@ nav .toggle-menu {
     padding: var(--section-padding);
     height: 600px;
     position: relative;
-    background-image: url(../Images/design-features.jpg);
+    background-image: url(../Images/design-features.webp);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -596,7 +632,7 @@ nav .toggle-menu {
 
 .stats {
     padding: var(--section-padding);
-    background-image: url(../Images/stats.png);
+    background-image: url(../Images/stats.webp);
     text-align: center;
     position: relative;
 }
@@ -704,9 +740,17 @@ nav .toggle-menu {
     position: relative;
 }
 
-.our-skills .container .Testimonials > div {
+.our-skills .container .Testimonials .profiles div {
     display: flex;
     margin-bottom: 30px;
+}
+
+.our-skills .container .Testimonials .profiles.active {
+    display: block;
+}
+
+.our-skills .container .Testimonials .profiles {
+    display: none;
 }
 
 .our-skills .container .Testimonials .content img {
@@ -729,14 +773,14 @@ nav .toggle-menu {
     margin-bottom: 10px;
 }
 
-.our-skills .container .Testimonials .bullets {
+.our-skills .container .Testimonials .bullets-profiles {
     position: static;
     margin: 50px 0;
     justify-content: center;
     transform: none;
 }
 
-.our-skills .container .Testimonials .bullets li {
+.our-skills .container .Testimonials .bullets-profiles li {
     border-color: #aaa;
     width: 1rem;
     height: 1rem;
@@ -807,7 +851,7 @@ nav .toggle-menu {
 
 .quote {
     padding: var(--section-padding);
-    background-image: url(../Images/quote.jpg);
+    background-image: url(../Images/quote.webp);
     text-align: center;
     background-size: cover;
     position: relative;
@@ -939,7 +983,7 @@ nav .toggle-menu {
 
 .sub {
     padding: var(--section-padding);
-    background-image: url(../Images/subscribe.jpg);
+    background-image: url(../Images/subscribe.webp);
     background-size: cover;
     color: white;
     position: relative;
@@ -1015,6 +1059,7 @@ nav .toggle-menu {
     text-transform: uppercase;
     border: 1px solid white;
     border-left: none;
+    cursor: pointer;
 }
 
 .sub p {
@@ -1103,7 +1148,7 @@ textarea {
 
 footer {
     padding: 50px 0;
-    background-image: url(../Images/subscribe.jpg);
+    background-image: url(../Images/subscribe.webp);
     background-size: cover;
     text-align: center;
     color: white;

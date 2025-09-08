@@ -1,0 +1,75 @@
+ the issue now! The problem is likely due to **how browsers handle invalid or unrecognized vendor-prefixed selectors in a comma-separated list**.  
+
+### Why Your Previous Code Failed:
+1. **Opera GX (Chromium-based) ignores `-moz-placeholder`**  
+   - When a browser sees an unrecognized vendor-prefixed selector in a group (like `::-moz-placeholder`), it may **skip the entire rule** (even the valid parts like `::-webkit-input-placeholder`).  
+   - This is why your first version didn’t work—Opera GX saw `-moz-` and ignored everything.
+
+2. **Your New Code (Fixed)**  
+   - By removing `::-moz-placeholder`, the remaining selectors (`-webkit-` + standard `::placeholder`) now work in Opera GX because:  
+     - `::-webkit-input-placeholder` → Targets older Chromium/Opera.  
+     - `::placeholder` → Targets modern browsers.  
+
+---
+
+### ✅ Best Solution for Cross-Browser Placeholder Styling:
+```css
+/* MODERN BROWSERS (Opera GX, Chrome, Edge, Firefox 64+) */
+.sub .container form input[type="email"]::placeholder {
+    color: white;
+}
+
+/* OLDER WEBKIT (Safari, older Opera/Chrome) */
+.sub .container form input[type="email"]::-webkit-input-placeholder {
+    color: white;
+}
+
+/* FIREFOX (if needed, but Opera GX won't use this) */
+.sub .container form input[type="email"]::-moz-placeholder {
+    color: white;
+    opacity: 1; /* Firefox reduces opacity by default */
+}
+```
+**Key Fix:**  
+- **Separate the rules** instead of grouping them with commas.  
+- This ensures that if one selector fails (e.g., `-moz-` in Opera), it won’t break the others.  
+
+---
+
+### Why This Works:
+- **Opera GX** applies the `::placeholder` and `::-webkit-input-placeholder` rules.  
+- **Firefox** applies `::-moz-placeholder`.  
+- No rule is ignored due to invalid prefixes.  
+
+---
+
+### Still Not Working? Try These Debugging Steps:
+1. **Check DevTools** (`F12`):  
+   - Inspect the email input → See if `::placeholder` styles are applied.  
+   - Look for **strikethrough styles** (overridden by another rule).  
+
+2. **Test with `!important` (temporarily)**  
+   ```css
+   .sub .container form input[type="email"]::placeholder {
+       color: white !important;
+   }
+   ```
+   If this works, another CSS rule is overriding your placeholder color.  
+
+3. **Verify HTML Structure**  
+   - Ensure your email input is inside `.sub .container form`.  
+   - Example:  
+     ```html
+     <div class="sub">
+       <div class="container">
+         <form>
+           <input type="email" placeholder="Enter email">
+         </form>
+       </div>
+     </div>
+     ```
+
+---
+
+### Final Answer:
+Your new code is correct for Opera GX (removing `-moz-` fixed it). For full cross-browser support, **split the rules** as shown above. Let me know if you need further help! 🚀 -->
