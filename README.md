@@ -42,15 +42,15 @@ The project is part of my journey to practice **front-end web development** and 
 
 ### 🏠 Hero Section
 
-![Hero Section](https://i.imgur.com/XOY4mRq.png)
+![Hero Section](<Screenshots/HeroSection.png)
 
 ### 💼 Services Section
 
-![Services Section](https://i.imgur.com/p8m7n04.png)
+![Services Section](Screenshots/Services.png)
 
 ### 🖼️ Portfolio Gallery
 
-![Portfolio Section](https://i.imgur.com/L6rIVfx.png)
+![Portfolio Section](Screenshots/Portfolio.png)
 
 ---
 
