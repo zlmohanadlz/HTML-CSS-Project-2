@@ -4,7 +4,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/zlmohanadlz/HTML-CSS-Project-2)](https://github.com/zlmohanadlz/HTML-CSS-Project-2)
 [![GitHub stars](https://img.shields.io/github/stars/zlmohanadlz/HTML-CSS-Project-2?style=social)](https://github.com/zlmohanadlz/HTML-CSS-Project-2)
 
-🔗 **Live Demo**: [Kasper Template Website](https://zlmohanadlz.github.io/HTML-CSS-Project-2)
+🔗 **Live Demo**: [Kasper Template Website](https://mohanadx.github.io/HTML-CSS-Project-2/)
 
 ---
 
